@@ -9,9 +9,11 @@ $url = $url_array["path"];
 if ($url == "/") {
     require "controllers/index.php";
 }
-
-if ($url == "/collectives") {
+elseif ($url == "/collectives") {
     require "controllers/collectives.php";
+} else {
+    http_response_code(404);
+    require "controllers/404.php";
 }
 
 ?>

@@ -1,6 +1,6 @@
 <header>
         <nav>
-            <a href="./"> Events </a>   
-            <a href="./collectives"> Collectives </a>        
+            <a href="./"> Pasākumi </a>   
+            <a href="./collectives"> Kolektīvi </a>        
         </nav>
 </header>

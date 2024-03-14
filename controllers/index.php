@@ -1,5 +1,5 @@
 <?php
-$title = "I LOVE METAL GEAR (replace later)";
+$title = "Pasākumi";
 
 require "./Database.php";
 $config = require("./config.php");
