@@ -1,23 +1,23 @@
 <?php
-$title = "Izdzest pasakumus";
-require "./Database.php";
-$config = require("./config.php");
-$db = new Database($config);
-$query = "SELECT * FROM events";
-$params = [];
+$title = "Dzēšana";
+require "Database.php";
+$config = require "config.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // dd("Pos");
-    $query .= "AND DELETE FROM events WHERE events.id = $_POST[id];";
-              $db->execute($query, $params);
-              header("Location: /");
-              die();
-} else {
+if(isset($_GET["delete_id"]))
+{
+    $query = "DELETE FROM events WHERE id = $_GET[delete_id];";
+    $params = [];
     $db = new Database($config);
-$posts = $db
-            ->execute($query, $params)
-            ->fetchAll();
+    $events = $db
+        ->execute($query, $params)
+        ->fetchALL();
 }
 
-require "./views/delete.view.php";
-?>
+$query = "SELECT * FROM events"; 
+$params = [];
+$db = new Database($config);
+$posts = $db
+    ->execute($query, $params)
+    ->fetchALL();
+
+require "views/delete.view.php";

@@ -9,7 +9,7 @@ require "components/navbar.php";
         <?php } ?>
 
     </ul>
-    <form method="POST">
+    <form method="GET">
         <label>Dzēst pēc cipara
             <input name="delete_id"/>
         </label>
