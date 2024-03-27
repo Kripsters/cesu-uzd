@@ -10,8 +10,8 @@ require "components/navbar.php";
         </tr>
         <?php foreach ($posts as $post) { ?>
             <tr>
-                <td> <?=$post["name"]?> </td>
-                <td> <?=$post["description"]?> </td>
+                <td> <?=htmlspecialchars($post["name"])?> </td>
+                <td> <?=htmlspecialchars($post["description"])?> </td>
             </tr>
         <?php } ?>
     </table>

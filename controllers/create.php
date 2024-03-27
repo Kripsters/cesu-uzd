@@ -7,7 +7,26 @@ $db = new Database($config);
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // dd("Pos");
+    $errors = [];
+
+    if(trim($_POST["date_and_time"]) == "") {
+        $errors["datetime"] = "no datetime";
+    }
+    if(strlen($_POST["title"]) > 255) {
+        $errors["title"] = "title too long (255char)";
+    }
+    if(trim($_POST["title"]) == "") {
+        $errors["title"] = "no title";
+    }
+    if(strlen($_POST["venue"]) > 255) {
+        $errors["venue"] = "venue too long (255char)";
+    }
+    if(trim($_POST["venue"]) == "") {
+        $errors["venue"] = "no venue";
+    }
+
+    if (empty($errors)) {
+
     $query = "INSERT INTO events (date_and_time, title, venue) 
               VALUES (:date_and_time, :title, :venue);";
               $params = [
@@ -18,13 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $db->execute($query, $params);
               header("Location: /");
               die();
+            }
 }
 
-// if (isset($_GET["title"]) && $_GET["title"] != "" && isset($_GET["category-id"]) && $_GET["category-id"] != "") {
-//     $post_title = $_GET["id"];    
-//     $query .= " ("", 2)";
-//     $params = [":id" => $id];
-// }
 
 
 

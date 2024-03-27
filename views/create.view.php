@@ -3,6 +3,15 @@ require "components/head.php";
 require "components/navbar.php";
 ?>
     <h1> Pievienot pasākumu </h1>
+    <?php if (isset($errors["datetime"])) { ?>
+                <p> <?= $errors["datetime"] ?> </p>
+    <?php } ?>
+    <?php if (isset($errors["title"])) { ?>
+                <p> <?= $errors["title"] ?> </p>
+    <?php } ?>
+    <?php if (isset($errors["title"])) { ?>
+                <p> <?= $errors["venue"] ?> </p>
+    <?php } ?>
     <form method="POST">
         <label>Datums un laiks
             <input name="date_and_time"/>

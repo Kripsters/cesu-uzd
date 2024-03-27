@@ -4,10 +4,9 @@ require "components/navbar.php";
 ?>
     <h1> Pasākumi Cēsīs </h1>
     <ul>
-        <?php foreach ($posts as $post) { ?>
-            <li><?=$post["id"] ?> / <?=$post["date_and_time"]?> / <?=$post["title"]?> / <?=$post["venue"]?></li>
+    <?php foreach ($posts as $post) { ?>
+            <li> <?=htmlspecialchars($post["id"])?> / <?=htmlspecialchars($post["date_and_time"])?> / <?=htmlspecialchars($post["title"])?> / <?=htmlspecialchars($post["venue"])?></li>
         <?php } ?>
-
     </ul>
     <form method="GET">
         <label>Dzēst pēc cipara
