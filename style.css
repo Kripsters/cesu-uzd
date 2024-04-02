@@ -12,5 +12,8 @@ table {
 
   li {
     font-family: arial;
-    
   }
+
+p,a,h1 {
+  font-family: arial, sans-serif;
+}

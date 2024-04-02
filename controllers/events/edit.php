@@ -27,4 +27,4 @@ $posts = $db
     ->execute($query, $params)
     ->fetchALL();
 
-require "views/edit.view.php";
+require "views/events/edit.view.php";

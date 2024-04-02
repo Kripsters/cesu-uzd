@@ -1,6 +1,6 @@
 <?php 
-require "components/head.php";
-require "components/navbar.php";
+require "views/components/head.php";
+require "views/components/navbar.php";
 ?>
     <h1> Pievienot pasākumu </h1>
     <?php if (isset($errors["datetime"])) { ?>
@@ -25,5 +25,5 @@ require "components/navbar.php";
         <button>Submit</button>
     </form>
 <?php
-require "components/footer.php";  
+require "views/components/footer.php";  
 ?>

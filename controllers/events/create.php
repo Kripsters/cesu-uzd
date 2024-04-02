@@ -44,4 +44,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $title = "Pievieno pasakumus";
-require "./views/create.view.php";
+require "views/events/create.view.php";

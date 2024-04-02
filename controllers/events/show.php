@@ -1,16 +1,17 @@
 <?php
-$title = "Pasākumi";
+$title = "Uh oh! cleanup on aisle 4";
 
 require "./Database.php";
 $config = require("./config.php");
 
-$query = "SELECT * FROM events";
+$query = "SELECT * FROM events WHERE id = $_GET[id]";
 $params = [];
 
 $db = new Database($config);
-$posts = $db
+$postb = $db
             ->execute($query, $params)
             ->fetchAll();
 
-require "./views/index.view.php";
+
+require "views/events/show.view.php";
 ?>

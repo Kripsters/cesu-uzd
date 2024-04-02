@@ -2,11 +2,12 @@
 
 
 $routes = [
-    "/" => "controllers/index.php",
+    "/" => "controllers/events/index.php",
     "/collectives" => "controllers/collectives.php",
-    "/create" => "controllers/create.php",
-    "/delete" => "controllers/delete.php",
-    "/edit" => "controllers/edit.php"
+    "/create" => "controllers/events/create.php",
+    "/delete" => "controllers/events/delete.php",
+    "/edit" => "controllers/events/edit.php",
+    "/show" => "controllers/events/show.php"
 ];
 
 
