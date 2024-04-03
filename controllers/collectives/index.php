@@ -12,5 +12,5 @@ $posts = $db
             ->execute($query, $params)
             ->fetchAll();
 
-require "./views/collectives.view.php";
+require "./views/collectives/index.view.php";
 ?>

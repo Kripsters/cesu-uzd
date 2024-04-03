@@ -1,6 +1,7 @@
 <?php 
-require "components/head.php";
-require "components/navbar.php";
+require "views/components/head.php";
+require "views/components/navbar.php";
+$post = $postb[0];
 ?>
     <h1> CKC kolektīvi </h1>
     <table>
@@ -8,13 +9,17 @@ require "components/navbar.php";
             <th>Kolektīvs</th>
             <th>Apraksts</th>
         </tr>
-        <?php foreach ($posts as $post) { ?>
             <tr>
                 <td> <?=htmlspecialchars($post["name"])?> </td>
                 <td> <?=htmlspecialchars($post["description"])?> </td>
             </tr>
-        <?php } ?>
     </table>
+    </br>
+    <form method="POST" action="/collectives/delete">
+    <button name="id" value="<?= $post["id"] ?>">Delete</button>
+    </form>
+    </br>
+    <a href="/collectives"> Back </a>  
 <?php
-require "components/footer.php";  
+require "views/components/footer.php";  
 ?>

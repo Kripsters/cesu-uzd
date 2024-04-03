@@ -8,7 +8,11 @@ $post = $postb[0];
             <p><?=htmlspecialchars($post["date_and_time"])?></p>
             <p><?=htmlspecialchars($post["title"])?></p>
             <p><?=htmlspecialchars($post["venue"])?></p>
-            <a href="./"> Back </a>  
+            <form method="POST" action="/event/delete">
+            <button name="id" value="<?= $post["id"] ?>">Delete</button>
+            </form>
+            <br/>
+            <a href="/"> Back </a>  
 <?php
 require "views/components/footer.php";  
 ?>
