@@ -1,31 +1,29 @@
 <?php 
 require "views/components/head.php";
 require "views/components/navbar.php";
+//dd($post);
 ?>
-    <h1> Pasākumi Cēsīs </h1>
-    <ul>
-        <?php foreach ($posts as $post) { ?>
-            <li><?=htmlspecialchars($post["id"])?> <?=htmlspecialchars($post["name"])?> / <?=htmlspecialchars($post["description"])?></li>
-        <?php } ?>
 
-    </ul>
-    <form method="GET">
-        <label>ID(pirmaic ciparins)
-            <input name="edit_id"/>
+<h1>Edit a post</h1>
+<form method="POST">
+<input name="id" value="<?= $post["id"] ?>" type="hidden">
+        <label>Name
+            <input name="name" value="<?= $_POST["name"] ?? $post["name"] ?>"/>
+            <?php if (isset($errors["name"])) { ?>
+                <p class="invalid-data"> <?= $errors["name"] ?> </p>
+            <?php } ?>
         </label>
-        </br>
-        <label>Nosaukums (kolektīvs)
-            <input name="edit_name"/>
+        <label>Description
+        <input name="description" value="<?= $_POST["description"] ?? $post["description"] ?>"/>
+            <?php if (isset($errors["descriptions"])) { ?>
+                <p class="invalid-data"> <?= $errors["description"] ?> </p>
+            <?php } ?>
+    <?php if (isset($errors["cat_id"])) { ?>
+        <p class="invalid-data"> <?= $errors["cat_id"] ?> </p>
+    <?php } ?>
         </label>
-        </br>
-        <label>Apraksts
-            <input name="edit_description"/>
-        </label>
-        </br>
-        <button>Rediģēt!</button>
+        <button>Submit</button>
     </form>
-    </br>
-    <a href="/collectives"> Back </a>  
 <?php
 require "views/components/footer.php";  
 ?>

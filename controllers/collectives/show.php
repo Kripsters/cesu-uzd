@@ -8,9 +8,9 @@ $query = "SELECT * FROM collectives WHERE id = $_GET[id]";
 $params = [];
 
 $db = new Database($config);
-$postb = $db
+$post = $db
             ->execute($query, $params)
-            ->fetchAll();
+            ->fetch();
 
 
 require "views/collectives/show.view.php";

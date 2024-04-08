@@ -12,6 +12,9 @@ $post = $postb[0];
             <button name="id" value="<?= $post["id"] ?>">Delete</button>
             </form>
             <br/>
+            <a href="/events/edit?id=<?= $post["id"] ?>">Edit</a>
+            </br>
+            </br>
             <a href="/"> Back </a>  
 <?php
 require "views/components/footer.php";  

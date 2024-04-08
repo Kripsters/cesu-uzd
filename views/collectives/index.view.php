@@ -14,14 +14,11 @@ require "views/components/navbar.php";
                     <?=htmlspecialchars($post["name"])?> 
                 </a>
             </td>
-            <!-- <td> <?=htmlspecialchars($post["description"])?> </td> -->
             </tr>
         <?php } ?>
     </table>
     <br/>
     <a href="./collectives/create"> Pievienot </a>
-    <br/>
-    <a href="./collectives/edit"> Rediģēt </a>
 <?php
 require "views/components/footer.php";  
 ?>

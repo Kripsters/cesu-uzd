@@ -1,7 +1,7 @@
 <?php 
 require "views/components/head.php";
 require "views/components/navbar.php";
-$post = $postb[0];
+
 ?>
     <h1> CKC kolektīvi </h1>
     <table>
@@ -18,6 +18,9 @@ $post = $postb[0];
     <form method="POST" action="/collectives/delete">
     <button name="id" value="<?= $post["id"] ?>">Delete</button>
     </form>
+    </br> 
+    <a href="/collectives/edit?id=<?= $post["id"] ?>">Edit</a>
+    </br>
     </br>
     <a href="/collectives"> Back </a>  
 <?php
